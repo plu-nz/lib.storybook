@@ -14,7 +14,7 @@ pnpm storybook
 pnpm build:storybook
 ```
 
-Storybook runs at `http://localhost:6006`. The package is not published to a registry. Git dependencies run the `prepare` build with the pinned pnpm version, so apps can install a commit from this repository and import its built output.
+Storybook runs at `http://localhost:6006`. The package is not published to a registry. Built files in `dist/` are committed so apps can install a pinned Git commit without rebuilding Storybook dependencies.
 
 ## Use in a SolidJS app
 

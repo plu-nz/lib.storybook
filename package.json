@@ -12,7 +12,6 @@
   "scripts": {
     "check": "tsc --noEmit",
     "build": "tsc -p tsconfig.build.json && vite build",
-    "prepare": "pnpm build",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
