@@ -1,6 +1,6 @@
 # PLUNZ Storybook and component library
 
-Shared SolidJS components and Darkppuccin design tokens for PLUNZ web apps. The initial library contains `Theme`, `Button`, `TextField`, and `Card`. Storybook documents their variants and lets designers change component props interactively.
+Shared SolidJS components and Darkppuccin design tokens for PLUNZ web apps. The initial library contains `Theme`, `Button`, `LinkButton`, `TextField`, and `Card`. Storybook documents their variants and lets designers change component props interactively.
 
 Colors come from the [Darkppuccin source palette](https://github.com/xonha/dotfiles/blob/main/omarchy/themes/darkppuccin/colors.toml). Accent choices are orange, blue, green, and red. `Theme` also selects square or rounded corners; the default is square. Components are scoped under `.plz-theme` so an app can adopt them gradually. Product copy and business behavior remain in each app.
 
