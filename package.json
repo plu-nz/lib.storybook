@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "check": "tsc --noEmit",
-    "build": "tsc -p tsconfig.build.json && vite build",
+    "build": "vite build && tsc -p tsconfig.build.json",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
     "deploy": "pnpm run build:storybook && wrangler deploy"
