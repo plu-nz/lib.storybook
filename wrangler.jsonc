@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "plunz-storybook",
+  "account_id": "d9843893c0daa49287456b9efb2cd021",
+  "compatibility_date": "2026-11-04",
+  "assets": { "directory": "./storybook-static", "not_found_handling": "single-page-application" },
+  "routes": [{ "pattern": "storybook.plu.nz", "custom_domain": true }]
+}

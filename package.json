@@ -1,29 +1,38 @@
 {
-  "name": "@plunz/design-system",
+  "name": "@plunz/storybook",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.16.1",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "check": "tsc --noEmit",
     "build": "tsc -p tsconfig.build.json && vite build",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "deploy": "pnpm run build:storybook && wrangler deploy"
   },
-  "peerDependencies": { "solid-js": "^1.9.0" },
+  "peerDependencies": {
+    "solid-js": "^1.9.0"
+  },
   "devDependencies": {
     "@storybook/addon-a11y": "9.1.21",
     "@storybook/addon-docs": "9.1.21",
+    "solid-js": "^1.9.18",
     "storybook": "9.1.21",
     "storybook-solidjs-vite": "9.0.3",
-    "solid-js": "^1.9.18",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vite-plugin-solid": "^2.11.15"
+    "vite-plugin-solid": "^2.11.15",
+    "wrangler": "4.149.0"
   }
 }

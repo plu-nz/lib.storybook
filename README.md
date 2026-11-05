@@ -1,4 +1,4 @@
-# PLUNZ design system
+# PLUNZ Storybook and component library
 
 Shared SolidJS components and Darkppuccin design tokens for PLUNZ web apps. The initial library contains `Theme`, `Button`, `TextField`, and `Card`. Storybook documents their variants and lets designers change component props interactively.
 
@@ -12,21 +12,23 @@ pnpm check
 pnpm build
 pnpm storybook
 pnpm build:storybook
+pnpm exec wrangler deploy --dry-run
+pnpm deploy
 ```
 
-Storybook runs at `http://localhost:6006`. The package is not published to a registry. Built files in `dist/` are committed so apps can install a pinned Git commit without rebuilding Storybook dependencies.
+The interactive Storybook is published at [storybook.plu.nz](https://storybook.plu.nz/), and runs locally at `http://localhost:6006`. The package is not published to a registry. Built files in `dist/` are committed so apps can install a pinned Git commit without rebuilding Storybook dependencies.
 
-For a consuming app, run `pnpm add '@plunz/design-system@github:plu-nz/lib.design_system#<commit>'` and commit the resulting lockfile. The `<commit>` placeholder should be replaced with a reviewed revision from this repository.
+For a consuming app, run `pnpm add '@plunz/storybook@github:plu-nz/lib.storybook#<commit>'` and commit the resulting lockfile. The `<commit>` placeholder should be replaced with a reviewed revision from this repository.
 
 ## Use in a SolidJS app
 
 ```tsx
-import { Theme, Button } from '@plunz/design-system';
-import '@plunz/design-system/styles.css';
+import { Theme, Button } from '@plunz/storybook';
+import '@plunz/storybook/styles.css';
 
 <Theme accent="orange" shape="square"><Button variant="solid">Continue</Button></Theme>
 ```
 
-Use `Theme` once around the adopted area. Pass `accent` to a specific `Button` when it needs a different approved color. Text fields own their label, hint, and error association. Keep labels and errors localized in the consuming app.
+Use `Theme` once around the adopted area. Pass `accent` to a specific `Button` when it needs a different approved color. Text fields own their label, hint, and error association. Keep labels and errors localized in the consuming app. Wrangler publishes only the static Storybook site on the PLUNZ Cloudflare account; no API or database is required.
 
 See [source](src/README.md), [stories](src/stories/README.md), [components](src/components/README.md), [Storybook configuration](.storybook/README.md), [CI](.github/README.md), and [agent instructions](AGENTS.md).
