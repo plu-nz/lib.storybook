@@ -16,6 +16,8 @@ pnpm build:storybook
 
 Storybook runs at `http://localhost:6006`. The package is not published to a registry. Built files in `dist/` are committed so apps can install a pinned Git commit without rebuilding Storybook dependencies.
 
+For a consuming app, run `pnpm add '@plunz/design-system@github:plu-nz/lib.design_system#<commit>'` and commit the resulting lockfile. The `<commit>` placeholder should be replaced with a reviewed revision from this repository.
+
 ## Use in a SolidJS app
 
 ```tsx
@@ -27,4 +29,4 @@ import '@plunz/design-system/styles.css';
 
 Use `Theme` once around the adopted area. Pass `accent` to a specific `Button` when it needs a different approved color. Text fields own their label, hint, and error association. Keep labels and errors localized in the consuming app.
 
-See [source](src/README.md), [stories](src/stories/README.md), [components](src/components/README.md), [Storybook configuration](.storybook/README.md), and [agent instructions](AGENTS.md).
+See [source](src/README.md), [stories](src/stories/README.md), [components](src/components/README.md), [Storybook configuration](.storybook/README.md), [CI](.github/README.md), and [agent instructions](AGENTS.md).
