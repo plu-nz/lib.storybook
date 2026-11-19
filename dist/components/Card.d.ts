@@ -1,4 +1,4 @@
-import { type JSX } from 'solid-js';
+import type { JSX } from '@solidjs/web';
 export interface CardProps extends JSX.HTMLAttributes<HTMLElement> {
     /** Raised uses a slightly lighter Darkppuccin surface. */
     surface?: 'base' | 'raised';

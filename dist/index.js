@@ -1,102 +1,95 @@
-import { insert as i, effect as v, className as h, setAttribute as u, template as c, spread as $, mergeProps as p, memo as b } from "solid-js/web";
-import { splitProps as f, createUniqueId as B } from "solid-js";
-var I = /* @__PURE__ */ c("<div>");
-function F(a) {
-  return (() => {
-    var r = I();
-    return i(r, () => a.children), v((e) => {
-      var t = `plz-theme ${a.class ?? ""}`, s = a.accent ?? "green", d = a.shape ?? "square";
-      return t !== e.e && h(r, e.e = t), s !== e.t && u(r, "data-plz-accent", e.t = s), d !== e.a && u(r, "data-plz-shape", e.a = d), e;
-    }, {
-      e: void 0,
-      t: void 0,
-      a: void 0
-    }), r;
-  })();
+import { className as e, effect as t, insert as n, memo as r, setAttribute as i, spread as a, template as o } from "@solidjs/web";
+import { createUniqueId as s, omit as c } from "solid-js";
+// src/theme.tsx
+var l = /* @__PURE__ */ o("<div>");
+function u(r) {
+	var a = l();
+	return n(a, () => r.children), t(() => ({
+		e: `plz-theme ${r.class ?? ""}`,
+		t: r.accent ?? "green",
+		a: r.shape ?? "square"
+	}), ({ e: t, t: n, a: r }, o) => {
+		e(a, t, o?.e), n !== o?.t && i(a, "data-plz-accent", n), r !== o?.a && i(a, "data-plz-shape", r);
+	}), a;
 }
-var x = /* @__PURE__ */ c("<button>");
-function L(a) {
-  const [r, e] = f(a, ["variant", "accent", "size", "class", "children"]);
-  return (() => {
-    var t = x();
-    return $(t, p(e, {
-      get class() {
-        return `plz-button plz-button--${r.variant ?? "solid"} plz-button--${r.size ?? "md"} ${r.class ?? ""}`;
-      },
-      get "data-plz-accent"() {
-        return r.accent;
-      }
-    }), !1, !0), i(t, () => r.children), t;
-  })();
+// src/components/Button.tsx
+var d = /* @__PURE__ */ o("<button>");
+function f(e) {
+	let t = e, r = c(e, "variant", "accent", "size", "class", "children");
+	var i = d();
+	return a(i, [r, {
+		get class() {
+			return `plz-button plz-button--${t.variant ?? "solid"} plz-button--${t.size ?? "md"} ${t.class ?? ""}`;
+		},
+		get "data-plz-accent"() {
+			return t.accent;
+		}
+	}], !0), n(i, () => t.children), i;
 }
-var q = /* @__PURE__ */ c("<a>");
-function N(a) {
-  const [r, e] = f(a, ["variant", "accent", "size", "class", "children"]);
-  return (() => {
-    var t = q();
-    return $(t, p(e, {
-      get class() {
-        return `plz-button plz-button--${r.variant ?? "solid"} plz-button--${r.size ?? "md"} ${r.class ?? ""}`;
-      },
-      get "data-plz-accent"() {
-        return r.accent;
-      }
-    }), !1, !0), i(t, () => r.children), t;
-  })();
+// src/components/LinkButton.tsx
+var p = /* @__PURE__ */ o("<a>");
+function m(e) {
+	let t = e, r = c(e, "variant", "accent", "size", "class", "children");
+	var i = p();
+	return a(i, [r, {
+		get class() {
+			return `plz-button plz-button--${t.variant ?? "solid"} plz-button--${t.size ?? "md"} ${t.class ?? ""}`;
+		},
+		get "data-plz-accent"() {
+			return t.accent;
+		}
+	}], !0), n(i, () => t.children), i;
 }
-var C = /* @__PURE__ */ c("<div><label class=plz-field__label></label><input>"), P = /* @__PURE__ */ c("<p class=plz-field__hint>"), T = /* @__PURE__ */ c("<p class=plz-field__error>");
-function S(a) {
-  const r = B(), [e, t] = f(a, ["label", "hint", "error", "id", "class", "aria-describedby", "aria-invalid"]), s = () => e.id ?? r, d = () => `${s()}-hint`, m = () => `${s()}-error`, g = () => [e["aria-describedby"], e.hint ? d() : "", e.error ? m() : ""].filter(Boolean).join(" ") || void 0;
-  return (() => {
-    var o = C(), z = o.firstChild, y = z.nextSibling;
-    return i(z, () => e.label), $(y, p(t, {
-      get id() {
-        return s();
-      },
-      class: "plz-field__input",
-      get "aria-describedby"() {
-        return g();
-      },
-      get "aria-invalid"() {
-        return b(() => !!e.error)() ? !0 : e["aria-invalid"];
-      }
-    }), !1, !1), i(o, (() => {
-      var n = b(() => !!e.hint);
-      return () => n() && (() => {
-        var l = P();
-        return i(l, () => e.hint), v(() => u(l, "id", d())), l;
-      })();
-    })(), null), i(o, (() => {
-      var n = b(() => !!e.error);
-      return () => n() && (() => {
-        var l = T();
-        return i(l, () => e.error), v(() => u(l, "id", m())), l;
-      })();
-    })(), null), v((n) => {
-      var l = `plz-field ${e.class ?? ""}`, _ = s();
-      return l !== n.e && h(o, n.e = l), _ !== n.t && u(z, "for", n.t = _), n;
-    }, {
-      e: void 0,
-      t: void 0
-    }), o;
-  })();
+// src/components/TextField.tsx
+var h = /* @__PURE__ */ o("<div><label class=plz-field__label></label><input><!><!>"), g = /* @__PURE__ */ o("<p class=plz-field__hint>"), _ = /* @__PURE__ */ o("<p class=plz-field__error>");
+function v(o) {
+	let l = s(), u = o, d = c(o, "label", "hint", "error", "id", "class", "aria-describedby", "aria-invalid"), f = () => typeof u.id == "string" ? u.id : l, p = () => `${f()}-hint`, m = () => `${f()}-error`, v = () => [
+		u["aria-describedby"],
+		u.hint ? p() : "",
+		u.error ? m() : ""
+	].filter(Boolean).join(" ") || void 0;
+	var y = h(), b = y.firstChild, x = b.nextSibling, S = x.nextSibling, C = S.nextSibling;
+	return n(b, () => u.label), a(x, [d, {
+		get id() {
+			return f();
+		},
+		class: "plz-field__input",
+		get "aria-describedby"() {
+			return v();
+		},
+		get "aria-invalid"() {
+			return u.error ? "true" : u["aria-invalid"];
+		}
+	}], !1), n(y, (() => {
+		var e = r(() => !!u.hint);
+		return () => e() ? (() => {
+			var e = g();
+			return n(e, () => u.hint), t(() => p(), (t) => {
+				i(e, "id", t);
+			}), e;
+		})() : u.hint;
+	})(), S), n(y, (() => {
+		var e = r(() => !!u.error);
+		return () => e() ? (() => {
+			var e = _();
+			return n(e, () => u.error), t(() => m(), (t) => {
+				i(e, "id", t);
+			}), e;
+		})() : u.error;
+	})(), C), t(() => ({
+		e: `plz-field ${u.class ?? ""}`,
+		t: f()
+	}), ({ e: t, t: n }, r) => {
+		e(y, t, r?.e), n !== r?.t && i(b, "for", n);
+	}), y;
 }
-var j = /* @__PURE__ */ c("<section>");
-function U(a) {
-  const [r, e] = f(a, ["surface", "padding", "class", "children"]);
-  return (() => {
-    var t = j();
-    return $(t, p(e, {
-      get class() {
-        return `plz-card plz-card--${r.surface ?? "base"} plz-card--${r.padding ?? "md"} ${r.class ?? ""}`;
-      }
-    }), !1, !0), i(t, () => r.children), t;
-  })();
+// src/components/Card.tsx
+var y = /* @__PURE__ */ o("<section>");
+function b(e) {
+	let t = e, r = c(e, "surface", "padding", "class", "children");
+	var i = y();
+	return a(i, [r, { get class() {
+		return `plz-card plz-card--${t.surface ?? "base"} plz-card--${t.padding ?? "md"} ${t.class ?? ""}`;
+	} }], !0), n(i, () => t.children), i;
 }
-export {
-  L as Button,
-  U as Card,
-  N as LinkButton,
-  S as TextField,
-  F as Theme
-};
+export { f as Button, b as Card, m as LinkButton, v as TextField, u as Theme };

@@ -1,4 +1,5 @@
-import { splitProps, type JSX } from 'solid-js';
+import { omit } from 'solid-js';
+import type { JSX } from '@solidjs/web';
 
 export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Determines fill and border treatment. */
@@ -9,6 +10,7 @@ export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 export function Button(props: ButtonProps) {
-  const [local, rest] = splitProps(props, ['variant', 'accent', 'size', 'class', 'children']);
+  const local = props;
+  const rest = omit(props, 'variant', 'accent', 'size', 'class', 'children');
   return <button {...rest} class={`plz-button plz-button--${local.variant ?? 'solid'} plz-button--${local.size ?? 'md'} ${local.class ?? ''}`} data-plz-accent={local.accent}>{local.children}</button>;
 }

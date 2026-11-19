@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
-import solid from 'vite-plugin-solid';
+import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   plugins: [solid()],
   build: {
     lib: { entry: 'src/index.ts', formats: ['es'], fileName: 'index', cssFileName: 'styles' },
-    rollupOptions: { external: ['solid-js', 'solid-js/web'] },
+    rollupOptions: { external: ['solid-js', '@solidjs/web'] },
   },
 });
