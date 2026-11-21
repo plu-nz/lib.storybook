@@ -1,15 +1,27 @@
 /* Tokens are scoped so apps may adopt the library one component at a time. */
-.plz-theme{--plz-bg:#0f0f0f;--plz-surface:#1c1c1c;--plz-raised:#313244;--plz-line:#393947;--plz-text:#cdd6f4;--plz-muted:#bac2de;--plz-subtle:#6c7086;--plz-orange:#f6b6ab;--plz-blue:#89b4fa;--plz-green:#a6e3a1;--plz-red:#f38ba8;--plz-focus:#89b4fa;--plz-accent:var(--plz-green);--plz-radius:0;--plz-space-1:4px;--plz-space-2:8px;--plz-space-3:12px;--plz-space-4:16px;--plz-space-6:24px;color:var(--plz-text);background:var(--plz-bg);font-family:system-ui,sans-serif;color-scheme:dark}
-.plz-theme[data-plz-accent=orange],.plz-theme [data-plz-accent=orange]{--plz-accent:var(--plz-orange)}
-.plz-theme[data-plz-accent=blue],.plz-theme [data-plz-accent=blue]{--plz-accent:var(--plz-blue)}
-.plz-theme[data-plz-accent=green],.plz-theme [data-plz-accent=green]{--plz-accent:var(--plz-green)}
+.plz-theme{--plz-bg:#0f0f0f;--plz-surface:#1c1c1c;--plz-raised:#333333;--plz-line:#333333;--plz-text:#d7d7d7;--plz-muted:#c3c3c3;--plz-subtle:#717171;--plz-on-accent:#0f0f0f;--plz-rosewater:#f5e0dc;--plz-flamingo:#f2cdcd;--plz-pink:#f5c2e7;--plz-mauve:#cba6f7;--plz-red:#f38ba8;--plz-maroon:#eba0ac;--plz-orange:#fab387;--plz-yellow:#f9e2af;--plz-green:#a6e3a1;--plz-teal:#94e2d5;--plz-sky:#89dceb;--plz-sapphire:#74c7ec;--plz-blue:#89b4fa;--plz-lavender:#b4befe;--plz-focus:var(--plz-blue);--plz-accent:var(--plz-green);--plz-radius:0;--plz-space-1:4px;--plz-space-2:8px;--plz-space-3:12px;--plz-space-4:16px;--plz-space-6:24px;color:var(--plz-text);background:var(--plz-bg);font-family:system-ui,sans-serif;color-scheme:dark}
+.plz-theme[data-plz-mode=light]{--plz-bg:#f7f7f9;--plz-surface:#ffffff;--plz-raised:#f7f7f9;--plz-line:#d0d0d0;--plz-text:#515151;--plz-muted:#606060;--plz-subtle:#909090;--plz-on-accent:#0f0f0f;color-scheme:light}
+@media(prefers-color-scheme:light){.plz-theme[data-plz-mode=system]{--plz-bg:#f7f7f9;--plz-surface:#ffffff;--plz-raised:#f7f7f9;--plz-line:#d0d0d0;--plz-text:#515151;--plz-muted:#606060;--plz-subtle:#909090;--plz-on-accent:#0f0f0f;color-scheme:light}}
+.plz-theme[data-plz-accent=rosewater],.plz-theme [data-plz-accent=rosewater]{--plz-accent:var(--plz-rosewater)}
+.plz-theme[data-plz-accent=flamingo],.plz-theme [data-plz-accent=flamingo]{--plz-accent:var(--plz-flamingo)}
+.plz-theme[data-plz-accent=pink],.plz-theme [data-plz-accent=pink]{--plz-accent:var(--plz-pink)}
+.plz-theme[data-plz-accent=mauve],.plz-theme [data-plz-accent=mauve]{--plz-accent:var(--plz-mauve)}
 .plz-theme[data-plz-accent=red],.plz-theme [data-plz-accent=red]{--plz-accent:var(--plz-red)}
+.plz-theme[data-plz-accent=maroon],.plz-theme [data-plz-accent=maroon]{--plz-accent:var(--plz-maroon)}
+.plz-theme[data-plz-accent=orange],.plz-theme [data-plz-accent=orange]{--plz-accent:var(--plz-orange)}
+.plz-theme[data-plz-accent=yellow],.plz-theme [data-plz-accent=yellow]{--plz-accent:var(--plz-yellow)}
+.plz-theme[data-plz-accent=green],.plz-theme [data-plz-accent=green]{--plz-accent:var(--plz-green)}
+.plz-theme[data-plz-accent=teal],.plz-theme [data-plz-accent=teal]{--plz-accent:var(--plz-teal)}
+.plz-theme[data-plz-accent=sky],.plz-theme [data-plz-accent=sky]{--plz-accent:var(--plz-sky)}
+.plz-theme[data-plz-accent=sapphire],.plz-theme [data-plz-accent=sapphire]{--plz-accent:var(--plz-sapphire)}
+.plz-theme[data-plz-accent=blue],.plz-theme [data-plz-accent=blue]{--plz-accent:var(--plz-blue)}
+.plz-theme[data-plz-accent=lavender],.plz-theme [data-plz-accent=lavender]{--plz-accent:var(--plz-lavender)}
 .plz-theme[data-plz-shape=rounded]{--plz-radius:12px}
 .plz-theme *{box-sizing:border-box}
 .plz-button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:var(--plz-space-2);border:1px solid transparent;border-radius:var(--plz-radius);padding:10px 16px;font:700 .875rem/1.35 system-ui,sans-serif;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
 .plz-button[href]{text-decoration:none}
 .plz-button--sm{min-height:40px;padding:8px 12px;font-size:.8125rem}
-.plz-button--solid{background:var(--plz-accent);border-color:var(--plz-accent);color:var(--plz-bg)}
+.plz-button--solid{background:var(--plz-accent);border-color:var(--plz-accent);color:var(--plz-on-accent)}
 .plz-button--outline{background:transparent;border-color:var(--plz-accent);color:var(--plz-accent)}
 .plz-button--ghost{background:transparent;color:var(--plz-text)}
 .plz-button:hover:not(:disabled){filter:brightness(1.1)}

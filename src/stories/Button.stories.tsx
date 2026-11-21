@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { Theme } from '../theme';
+import { Theme, accents } from '../theme';
 import { Button } from '../components/Button';
 
 const meta = {
@@ -7,7 +7,7 @@ const meta = {
   component: Button,
   argTypes: {
     variant: { control: 'select', options: ['solid', 'outline', 'ghost'] },
-    accent: { control: 'select', options: ['orange', 'blue', 'green', 'red'] },
+    accent: { control: 'select', options: [...accents] },
     size: { control: 'select', options: ['sm', 'md'] },
   },
   args: { children: 'Start focus', variant: 'solid', accent: 'green', size: 'md', disabled: false },

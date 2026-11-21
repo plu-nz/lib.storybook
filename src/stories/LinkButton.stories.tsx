@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { Theme } from '../theme';
+import { Theme, accents } from '../theme';
 import { LinkButton } from '../components/LinkButton';
 
 const meta = {
@@ -7,7 +7,7 @@ const meta = {
   component: LinkButton,
   argTypes: {
     variant: { control: 'select', options: ['solid', 'outline', 'ghost'] },
-    accent: { control: 'select', options: ['orange', 'blue', 'green', 'red'] },
+    accent: { control: 'select', options: [...accents] },
     size: { control: 'select', options: ['sm', 'md'] },
   },
   args: { href: '#apps', children: 'Explore apps', variant: 'solid', accent: 'green', size: 'md' },
